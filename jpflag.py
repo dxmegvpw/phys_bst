@@ -28,11 +28,10 @@ if __name__ == "__main__":
     output = ''
     for strings in sdata:
         if is_japanese(strings):
-            output = output +'@' + strings[:-3] + '        isjapanese = {true}\n}\n'
+            output = output +'@' + strings[:-3] + ',\n  isjapanese = {true}\n}\n'
         else:
             output = output +'@'+ strings
     output_bib = output[1:]
     # 4. save as new files
-    fname_o = fname.replace('.bib','_withJPflag.bib')
-    with open(fname_o,'w',encoding='utf-8') as fo:
+    with open(fname,'w',encoding='utf-8') as fo:
         fo.write(output_bib)
