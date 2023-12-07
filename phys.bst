@@ -891,7 +891,7 @@ FUNCTION {article}
     }
   if$
   journal missing$ 
-      { format.url output }
+      { }
       { }
   if$
   new.sentence
@@ -913,7 +913,7 @@ FUNCTION {book}
       if$
     }
   if$
-  format.btitle add.doi "title" output.check
+  format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
       new.block
@@ -1147,8 +1147,6 @@ FUNCTION {misc}
   if$
   format.howpublished output
   format.date output
-  new.block
-  format.url output
   new.sentence
   note output
   new.sentence
